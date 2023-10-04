@@ -13,6 +13,9 @@ import {
 export const StyledCard = styled(Card)`
   max-width: 350px;
   width: calc(33.33% - 20px);
+  && {
+    box-shadow: 20px 20px 20px -9px rgba(244, 0, 0, 0.4);
+  }
 `;
 
 export const StyledCardActionArea = styled(CardActionArea)``;
@@ -86,13 +89,12 @@ export const StyledCardActions = styled(CardActions)`
   }
 `;
 
-export const StyledButton = styled(Button)`
-  
-`;
+export const StyledButton = styled(Button)``;
 
 export const StyledContainer = styled(Container)`
   && {
     display: flex;
+    margin-bottom: 50px;
   }
   flex-wrap: wrap;
   justify-content: space-between;
