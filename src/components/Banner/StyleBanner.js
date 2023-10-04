@@ -4,13 +4,23 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 export const BannerContainer = styled(Container)`
-  margin-bottom: 20px;
+  width: 1400px; 
+  height: 500px; 
+  overflow: hidden; 
+  position: relative;
+  border-radius: 10px;
+  margin-bottom: 50px;
 `;
 
 export const BannerImage = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
+  display: block; /* Establece el elemento como bloque para que ocupe el espacio disponible */
   border-radius: 10px;
+  object-fit: fill; 
+  position: relative;
+  max-width: 1400px; 
+  max-height: 500px; 
 `;
 
 export const StyledArrowForwardIosIcon = styled(ArrowForwardIosIcon)`
