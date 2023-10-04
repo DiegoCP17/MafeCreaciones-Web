@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-import { StyledAppBar, StyledButton, StyledMenuicon, StyledTypography } from "./StyleAppbar";
+import {
+  StyledAppBar,
+  StyledButton,
+  StyledMenuicon,
+  StyledTypography,
+} from "./StyleAppbar";
 
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -15,7 +20,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["Inicio", "Creaciones", "Acerca de", "Contacto"];
 
 export const Appbar = (props) => {
   const { window } = props;
