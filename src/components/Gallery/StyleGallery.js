@@ -32,9 +32,39 @@ export const StyledCardContent = styled(CardContent)`
 `;
 
 export const StyledTypographyTitleSection = styled(Typography)`
-  text-align: center;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  font-style: italic;
+  cursor: pointer;
   && {
     margin-bottom: 50px;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 4px;
+    background-color: black;
+    top: 50%;
+    transform: scale(0);
+    transition: all 0.4s ease-in;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    transform: scale(1);
+  }
+  &::before {
+    left: 180px;
+    background-color: rgba(238, 131, 107, 0.6);
+  }
+
+  &::after {
+    right: 180px;
+    background-color: rgba(238, 131, 107, 0.6);
   }
 `;
 export const StyledTypographyTitleCard = styled(Typography)``;
@@ -94,7 +124,7 @@ export const StyledButton = styled(Button)``;
 export const StyledContainer = styled(Container)`
   && {
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 5rem;
   }
   flex-wrap: wrap;
   justify-content: space-between;
