@@ -53,7 +53,7 @@ export const StyledImg = styled.img`
   max-width: 450px;
   max-height: 600px;
   object-fit: cover;
-  transition: all 0.3s ease-in-out; /* Agregar una transición suave */
+  transition: all 0.3s ease-in-out;
 
   && {
     height: 450px;
@@ -61,7 +61,7 @@ export const StyledImg = styled.img`
 
   &:hover {
     transform: scale(1.1);
-    box-shadow: 20px 20px 20px -10px rgba(244, 0, 0, 0.4);
+    box-shadow: 20px 20px 20px -10px rgba(238, 131, 107, 0.8);
   }
 `;
 

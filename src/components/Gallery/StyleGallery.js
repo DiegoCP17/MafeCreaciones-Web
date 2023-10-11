@@ -12,9 +12,16 @@ import {
 
 export const StyledCard = styled(Card)`
   max-width: 350px;
+  margin-bottom: 30px;
   width: calc(33.33% - 20px);
   && {
-    box-shadow: 20px 20px 20px -9px rgba(244, 0, 0, 0.4);
+    box-shadow: 20px 20px 20px -9px rgba(238, 131, 107, 0.8);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 20px 20px 20px -10px rgba(244, 0, 0, 0.3);
+    transition: all 0.2s ease-in;
   }
 `;
 
@@ -130,4 +137,6 @@ export const StyledContainer = styled(Container)`
   justify-content: space-between;
   gap: 20px;
   align-content: center;
+
+  
 `;
