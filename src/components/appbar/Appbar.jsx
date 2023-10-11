@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {
   StyledAppBar,
   StyledButton,
+  StyledListBox,
   StyledMenuicon,
   StyledTypography,
 } from "./StyleAppbar";
@@ -82,11 +83,11 @@ export const Appbar = (props) => {
           >
             Mafe Creaciones
           </StyledTypography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <StyledListBox>
             {navItems.map((item) => (
               <StyledButton key={item}>{item}</StyledButton>
             ))}
-          </Box>
+          </StyledListBox>
         </Toolbar>
       </StyledAppBar>
       <nav>
