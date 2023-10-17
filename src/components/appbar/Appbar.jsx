@@ -40,7 +40,7 @@ export const Appbar = (props) => {
         spy={true}
         smooth={true}
         offset={-90} // Ajusta esto según el tamaño de tu barra de navegación
-        duration={500} // Duración del desplazamiento (en milisegundos)
+        duration={800} // Duración del desplazamiento (en milisegundos)
       >
         {sectionId}
       </Link>
