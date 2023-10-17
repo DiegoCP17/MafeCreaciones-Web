@@ -3,6 +3,7 @@ import { Appbar } from "../components/appbar/Appbar";
 import { Banner } from "../components/Banner/Banner";
 import { Gallery } from "../components/Gallery/Gallery";
 import { AboutUS } from "../components/AboutUs/AboutUS";
+import { Contact } from "../components/Contact/Contact";
 
 export const Home = () => {
   return (
@@ -11,6 +12,7 @@ export const Home = () => {
       <Banner />
       <Gallery />
       <AboutUS />
+      <Contact />
     </div>
   );
 };
