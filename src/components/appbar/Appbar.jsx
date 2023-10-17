@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-scroll"; // Importa Link de react-scroll
 
 import {
   StyledAppBar,
@@ -31,6 +32,21 @@ export const Appbar = (props) => {
     setMobileOpen((prevState) => !prevState);
   };
 
+  const handleMenuItemClick = (sectionId) => {
+    
+    return (
+      <Link
+        to={sectionId}
+        spy={true}
+        smooth={true}
+        offset={-90} // Ajusta esto según el tamaño de tu barra de navegación
+        duration={500} // Duración del desplazamiento (en milisegundos)
+      >
+        {sectionId}
+      </Link>
+    );
+  };
+
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
@@ -47,6 +63,7 @@ export const Appbar = (props) => {
         {navItems.map((item) => (
           <ListItem
             key={item}
+            onClick={() => handleMenuItemClick(item.toLowerCase())}
             disablePadding
           >
             <ListItemButton sx={{ textAlign: "center" }}>
@@ -85,7 +102,9 @@ export const Appbar = (props) => {
           </StyledTypography>
           <StyledListBox>
             {navItems.map((item) => (
-              <StyledButton key={item}>{item}</StyledButton>
+              <StyledButton key={item}>
+                {handleMenuItemClick(item.toLowerCase())}
+              </StyledButton>
             ))}
           </StyledListBox>
         </Toolbar>
