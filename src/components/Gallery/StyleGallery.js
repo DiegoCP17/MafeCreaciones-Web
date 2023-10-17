@@ -75,9 +75,7 @@ export const StyledTypographyTitleSection = styled(Typography)`
   }
 `;
 export const StyledTypographyTitleCard = styled(Typography)``;
-export const StyledTypographyDescription = styled(Typography)`
-  // Estilos para el Typography si es necesario
-`;
+export const StyledTypographyDescription = styled(Typography)``;
 
 export const StyledCardActions = styled(CardActions)`
   background-color: rgba(238, 131, 107, 0.6);
@@ -137,6 +135,4 @@ export const StyledContainer = styled(Container)`
   justify-content: space-between;
   gap: 20px;
   align-content: center;
-
-  
 `;
