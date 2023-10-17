@@ -54,7 +54,7 @@ export const StyledImg = styled.img`
   max-height: 600px;
   object-fit: cover;
   transition: all 0.3s ease-in-out;
-
+  box-shadow: 1px 9px 20px -5px;
   && {
     height: 450px;
   }
@@ -69,4 +69,5 @@ export const Styledtypographyparagraph = styled(Typography)`
   padding: 40px;
   font-size: 1.2em;
   text-align: justify;
+  line-height: 1.6;
 `;
