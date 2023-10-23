@@ -17,8 +17,7 @@ export const SectionContainer = styled(Container)`
   height: 100vh;
   display: grid;
   place-items: center;
-  margin: 50px;
-
+  margin: 50px 50px 0px 0px;
   @media (max-width: ${breakpoint}) {
     margin: 20px; // Reduzca el margen en pantallas más pequeñas
   }
@@ -29,10 +28,12 @@ export const BoxContactForm = styled(Box)`
   flex-direction: row;
   align-items: flex-start;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   background: rgba(238, 131, 107, 0.2);
   box-shadow: 1px 9px 20px -5px;
   border-radius: 30px;
+  border: 3px;
+  border-color: red;
 
   .contactForm {
     flex: 1;
@@ -50,7 +51,10 @@ export const BoxContactForm = styled(Box)`
     justify-content: center;
     align-items: center;
   }
-
+  @media (max-width: 901px) {
+    flex-direction: column; // Cambiar a diseño de columna en pantallas más pequeñas
+    align-items: center;
+  }
   @media (max-width: ${breakpoint}) {
     flex-direction: column; // Cambiar a diseño de columna en pantallas más pequeñas
   }
@@ -90,7 +94,7 @@ export const Typographyparraf = styled(Typography)`
   }
 
   @media (max-width: ${breakpoint}) {
-    font-size: 1em; // Reduzca el tamaño de fuente en pantallas más pequeñas
+    font-size: 0.9em; // Reduzca el tamaño de fuente en pantallas más pequeñas
   }
 `;
 
@@ -170,7 +174,7 @@ export const CustomButton = styled.button`
   margin: 0 auto;
 
   @media (max-width: ${breakpoint}) {
-    font-size: 18px; 
+    font-size: 18px;
   }
 `;
 
@@ -182,15 +186,16 @@ export const Info = styled(Box)`
 `;
 
 export const ImgBox = styled(Box)`
-  position: relative;
-  width: 100%;
+  position: sticky;
+  width: 350px;
   height: 350px;
-  margin: 40px 30px 30px 30px;
+  max-width: 100%;
+
+  margin: 40px 20px 30px 40px;
 
   @media (max-width: ${breakpoint}) {
-    width: 100%; // Hacer que la imagen ocupe todo el ancho en pantallas más pequeñas
+    width: 100%;
     height: auto; // Permitir que la altura se ajuste automáticamente
-    margin: 20px; // Reduzca el margen en pantallas más pequeñas
   }
 `;
 
@@ -248,5 +253,19 @@ export const LinkRS = styled(Link)`
   &:hover {
     color: #ed575a;
     transform: scale(1.4);
+  }
+`;
+
+export const ContainerStyled = styled(Container)`
+  color: #98383a;
+  padding: 10px; /* Elimina el relleno */
+  text-align: center;
+  width: 100%; /* Ocupa el 100% del ancho */
+`;
+
+export const TextStyled = styled(Typography)`
+  && {
+    font-size: 1em;
+    font-weight: bold;
   }
 `;

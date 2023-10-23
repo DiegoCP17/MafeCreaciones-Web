@@ -3,6 +3,7 @@ import React from "react";
 import {
   BoxContactForm,
   BoxForm,
+  ContainerStyled,
   CustomButton,
   FieldsTypography,
   ImgBox,
@@ -18,6 +19,7 @@ import {
   StyledTextField,
   TextArea,
   TextBox,
+  TextStyled,
   TypographyTitle,
   Typographyparraf,
 } from "./StyleContact";
@@ -173,6 +175,11 @@ export const Contact = () => {
           </RedesSociales>
         </Info>
       </BoxContactForm>
+      <ContainerStyled>
+        <TextStyled>
+          Copyright © 2023 Mafecreaciones.com™ - Todos los derechos reservados.
+        </TextStyled>
+      </ContainerStyled>
     </SectionContainer>
   );
 };
