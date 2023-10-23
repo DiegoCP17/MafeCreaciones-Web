@@ -23,6 +23,16 @@ export const StyledCard = styled(Card)`
     box-shadow: 20px 20px 20px -10px rgba(244, 0, 0, 0.3);
     transition: all 0.2s ease-in;
   }
+
+  /* Media Query para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    width: calc(50% - 20px);
+  }
+
+  /* Media Query para pantallas aún más pequeñas */
+  @media (max-width: 600px) {
+    width: 50%;
+  }
 `;
 
 export const StyledCardActionArea = styled(CardActionArea)``;
@@ -52,7 +62,7 @@ export const StyledTypographyTitleSection = styled(Typography)`
   &::after {
     content: "";
     position: absolute;
-    width: 300px;
+    width: 15%;
     height: 4px;
     background-color: black;
     top: 50%;
@@ -65,15 +75,16 @@ export const StyledTypographyTitleSection = styled(Typography)`
     transform: scale(1);
   }
   &::before {
-    left: 180px;
+    left: 15%;
     background-color: rgba(238, 131, 107, 0.6);
   }
 
   &::after {
-    right: 180px;
+    right: 15%;
     background-color: rgba(238, 131, 107, 0.6);
   }
 `;
+
 export const StyledTypographyTitleCard = styled(Typography)``;
 export const StyledTypographyDescription = styled(Typography)``;
 
@@ -133,6 +144,7 @@ export const StyledContainer = styled(Container)`
   }
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
+  gap: 30px;
   align-content: center;
+  justify-content: center;
 `;
