@@ -14,6 +14,8 @@ export const StyledCard = styled(Card)`
   max-width: 350px;
   margin-bottom: 30px;
   width: calc(33.33% - 20px);
+  height:100%;
+  max-height: 550px;
   && {
     box-shadow: 20px 20px 20px -9px rgba(238, 131, 107, 0.8);
   }
@@ -83,10 +85,27 @@ export const StyledTypographyTitleSection = styled(Typography)`
     right: 15%;
     background-color: rgba(238, 131, 107, 0.6);
   }
+
+  @media (max-width: 768px) {
+    && {
+      font-size: 40px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    && {
+      font-size: 30px;
+    }
+  }
 `;
 
 export const StyledTypographyTitleCard = styled(Typography)``;
-export const StyledTypographyDescription = styled(Typography)``;
+export const StyledTypographyDescription = styled(Typography)`
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
 
 export const StyledCardActions = styled(CardActions)`
   background-color: rgba(238, 131, 107, 0.6);

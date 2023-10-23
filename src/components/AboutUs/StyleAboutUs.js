@@ -38,6 +38,12 @@ export const StyledtypographyTitle = styled(Typography)`
     right: 15%;
     background-color: rgba(238, 131, 107, 0.6);
   }
+
+  @media (max-width: 400px) {
+    && {
+      font-size: 30px;
+    }
+  }
 `;
 
 export const StyledBox = styled(Box)`
