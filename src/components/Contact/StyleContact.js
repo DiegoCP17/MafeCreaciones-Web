@@ -170,7 +170,7 @@ export const CustomButton = styled.button`
   margin: 0 auto;
 
   @media (max-width: ${breakpoint}) {
-    font-size: 18px; // Reduzca el tamaño de fuente en pantallas más pequeñas
+    font-size: 18px; 
   }
 `;
 
@@ -183,7 +183,7 @@ export const Info = styled(Box)`
 
 export const ImgBox = styled(Box)`
   position: relative;
-  width: 450px;
+  width: 100%;
   height: 350px;
   margin: 40px 30px 30px 30px;
 

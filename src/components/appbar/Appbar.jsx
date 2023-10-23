@@ -79,7 +79,7 @@ export const Appbar = (props) => {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <>
       <CssBaseline />
       <StyledAppBar component="nav">
         <Toolbar>
@@ -135,6 +135,6 @@ export const Appbar = (props) => {
       >
         <Toolbar />
       </Box>
-    </Box>
+    </>
   );
 };
