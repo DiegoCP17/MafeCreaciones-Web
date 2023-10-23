@@ -9,7 +9,7 @@ import { Element } from "react-scroll";
 
 export const Home = () => {
   return (
-    <div>
+    <>
       <Appbar />
       <Element name="inicio">
         <Banner />
@@ -23,6 +23,6 @@ export const Home = () => {
       <Element name="contacto">
         <Contact />
       </Element>
-    </div>
+    </>
   );
 };
