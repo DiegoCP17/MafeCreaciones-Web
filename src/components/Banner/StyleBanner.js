@@ -34,7 +34,7 @@ export const StyledArrowForwardIosIcon = styled(ArrowForwardIosIcon)`
     cursor: pointer;
 
     @media (max-width: 768px) {
-      right: 5%;
+      right: 10%;
       font-size: 25px;
     }
   }
@@ -52,7 +52,7 @@ export const StyledArrowBackIosIcon = styled(ArrowBackIosIcon)`
 
     @media (max-width: 768px) {
       font-size: 25px;
-      left: 5%;
+      left: 10%;
     }
   }
 `;
