@@ -34,6 +34,7 @@ export const BoxContactForm = styled(Box)`
   border-radius: 30px;
   border: 3px;
   border-color: red;
+margin-bottom: 30px;
 
   .contactForm {
     flex: 1;
