@@ -53,6 +53,7 @@ export const StyledBox = styled(Box)`
   background-color: rgba(238, 131, 107, 0.1);
   padding-top: 0px;
   padding-bottom: 0px;
+
   @media (max-width: 1024px) {
     flex-wrap: wrap;
   }
@@ -74,6 +75,10 @@ export const StyledImg = styled.img`
   }
   @media (max-width: 1024px) {
     width: 100%;
+    max-width: 100%; /* Añade esto para que la imagen sea 100% de ancho */
+    display: block; /* Añade esto para que la imagen sea centrada */
+    margin: 0 auto; /* Añade esto para centrar horizontalmente */
+    margin-top: 50px;
   }
 `;
 
@@ -82,4 +87,12 @@ export const Styledtypographyparagraph = styled(Typography)`
   font-size: 1.2em;
   text-align: justify;
   line-height: 1.6;
+
+  @media (max-width: 1024px) {
+    font-size: 1.1em;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.0em;
+  }
 `;
