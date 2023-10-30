@@ -1,5 +1,7 @@
-import { Box, Grid } from "@mui/material";
-import React from "react";
+import { Alert, Box, Grid } from "@mui/material";
+import React, { useState, useRef } from "react";
+import axios from "axios";
+
 import {
   BoxContactForm,
   BoxForm,
@@ -32,11 +34,48 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import ImgContacto from "../../assets/Contact/ImgContacto.jpg";
 import { red } from "@mui/material/colors";
 
 export const Contact = () => {
+  const formRef = useRef(null);
+  const [successAlert, setSuccessAlert] = useState(false);
+  const [errorAlert, setErrorAlert] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const resetForm = () => {
+    formRef.current.reset();
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    // Datos del formulario
+    const formData = new FormData(formRef.current);
+
+    try {
+      // Realiza la solicitud HTTP POST
+      const response = await axios.post(
+        "https://formsubmit.co/b8396308100d58734864941f9d3de4ad",
+        formData
+      );
+
+      // Verifica la respuesta para confirmar el éxito
+      if (response.status === 200) {
+        // Cuando el envío es exitoso, muestra el mensaje de éxito
+        setSuccessAlert(true);
+        setErrorAlert(false); // Oculta la alerta de error si estaba visible
+        resetForm(); // Resetea el formulario
+      }
+    } catch (error) {
+      // Maneja cualquier error que pueda ocurrir durante la solicitud
+      setErrorAlert(true);
+      setErrorMessage("Hubo un error al enviar el formulario.");
+      console.error("Error al enviar el formulario:", error);
+    }
+  };
   return (
     <SectionContainer fixed>
       <BoxContactForm
@@ -52,7 +91,12 @@ export const Contact = () => {
               estaremos encantados de responderte lo antes posible.
             </Typographyparraf>
 
-            <form action="">
+            <form
+              ref={formRef}
+              action="https://formsubmit.co/b8396308100d58734864941f9d3de4ad"
+              method="POST"
+              onSubmit={handleSubmit}
+            >
               <Grid
                 className="form-2"
                 container
@@ -69,6 +113,7 @@ export const Contact = () => {
                     label="Nombre..."
                     type="text"
                     fullWidth
+                    name="name"
                   />
                 </InputBox>
                 <InputBox
@@ -82,6 +127,8 @@ export const Contact = () => {
                     label="Correo..."
                     type="text"
                     fullWidth
+                    name="email"
+                    required
                   />
                 </InputBox>
                 <InputBox
@@ -93,13 +140,40 @@ export const Contact = () => {
                   <TextArea
                     placeholder="Escribe tu mensaje Aqui"
                     maxRows={5}
+                    name="message"
                   />
                 </InputBox>
-                <CustomButton>Enviar</CustomButton>
+                <CustomButton onClick={handleSubmit}>Enviar</CustomButton>
               </Grid>
+              <br />
+              <Alert
+                severity="success"
+                onClose={() => setSuccessAlert(false)}
+                style={{ display: successAlert ? "flex" : "none" }}
+              >
+                Mensaje enviado con éxito.
+              </Alert>
+              <Alert
+                severity="error"
+                onClose={() => setErrorAlert(false)}
+                style={{ display: errorAlert ? "flex" : "none" }}
+              >
+                {errorMessage}
+              </Alert>
+              <input
+                type="hidden"
+                name="_next"
+                value="http://localhost:3000"
+              />
+              <input
+                type="hidden"
+                name="_captcha"
+                value="false"
+              />
             </form>
           </Box>
         </BoxForm>
+
         <Info>
           <ImgBox>
             <StyledImg src={ImgContacto} />
@@ -157,7 +231,7 @@ export const Contact = () => {
               <PinterestIcon />
             </LinkRS>
             <LinkRS
-              href="https://api.whatsapp.com/send/?phone=573192994843&text&type=phone_number&app_absent=0"
+              href="https://api.whatsapp.com/send/?phone=573192994843"
               underline="hover"
               target="_blank"
               color=""
