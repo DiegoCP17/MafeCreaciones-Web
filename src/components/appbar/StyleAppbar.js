@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
 
 export const StyledAppBar = styled(AppBar)`
   background: linear-gradient(50deg, #7ddbee, #ee836b);
@@ -67,11 +68,25 @@ export const StyledButton = styled(Button)`
     }
 
     &:hover {
-      color: #7ddbee; 
+      color: #7ddbee;
     }
   }
 `;
 
 export const StyledMenuicon = styled(MenuIcon)`
   color: #ee836b;
+`;
+
+export const StyledDrawer = styled(Drawer)`
+  display: block;
+  @media (min-width: 600px) {
+    display: none;
+  }
+
+  .MuiDrawer-paper {
+    box-sizing: border-box;
+    width: ${(props) => props.drawerWidth};
+    background: linear-gradient(80deg, #7ddbee, #ee836b);
+    color: #5498a4;
+  }
 `;
