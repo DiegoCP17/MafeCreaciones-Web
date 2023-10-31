@@ -64,7 +64,7 @@ export const Contact = () => {
       try {
         // Realiza la solicitud HTTP POST
         const response = await axios.post(
-          "https://formsubmit.co/b8396308100d58734864941f9d3de4ad",
+          "https://formsubmit.co/b8396308100d58734864941f9d3de4ad", //Agregar correo de mafecreaciones 
           formData
         );
 
@@ -220,7 +220,7 @@ export const Contact = () => {
                 sx={{ color: red["A100"], fontSize: 30, mr: 1 }}
               />
               <StyledLink
-                href="https://www.instagram.com/mafecreaciones/"
+                href="mailto: diego.cordoba@metanoiainnovation.com"// falta correo de mafe creaciones 
                 underline="hover"
                 target="_blank"
                 color=""
