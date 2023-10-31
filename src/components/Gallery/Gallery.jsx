@@ -1,6 +1,5 @@
 import React from "react";
 
-
 //imagenes
 
 import imagen1 from "../../assets/Gallery/imagen1.png";
@@ -59,6 +58,16 @@ export const Gallery = () => {
     },
   ];
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "573192994843";
+    const message =
+      "Hola, estoy interesado en tus Creaciones 🧶🧵, Quisiera recibir mas información 📄 ";
+    const whatsappURL = `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(
+      message
+    )}`;
+    window.location.href = whatsappURL;
+  };
+
   return (
     <>
       <StyledTypographyTitleSection variant="h3">
@@ -96,9 +105,9 @@ export const Gallery = () => {
             </StyledCardActionArea>
             <StyledCardActions>
               <StyledButton
-                        size="small"
-                        className="bn632-hover bn27"
-                
+                size="small"
+                className="bn632-hover bn27"
+                onClick={handleWhatsAppClick}
               >
                 ¡Lo quiero!
               </StyledButton>
