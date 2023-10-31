@@ -37,6 +37,11 @@ export const StyledArrowForwardIosIcon = styled(ArrowForwardIosIcon)`
       right: 10%;
       font-size: 25px;
     }
+
+    &:hover {
+      font-size: 55px;
+      color: #7ddbee;
+    }
   }
 `;
 
@@ -53,6 +58,11 @@ export const StyledArrowBackIosIcon = styled(ArrowBackIosIcon)`
     @media (max-width: 768px) {
       font-size: 25px;
       left: 10%;
+    }
+
+    &:hover {
+      font-size: 55px;
+      color: #ee836b;
     }
   }
 `;
