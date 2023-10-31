@@ -162,13 +162,18 @@ export const CustomButton = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.5s;
+  transition: background-color 0.5s, box-shadow 0.3s; 
   font-weight: bold;
   font-size: 20px;
   letter-spacing: 1px;
 
   &:hover {
     background-color: #ed575a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+
+  &:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
   }
 
   display: block;
@@ -232,6 +237,7 @@ export const InfoContact = styled(Box)`
 
 export const StyledLink = styled(Link)`
   color: rgba(238, 131, 107, 1);
+ cursor: pointer;
 `;
 
 export const Parraf = styled(Typography)``;

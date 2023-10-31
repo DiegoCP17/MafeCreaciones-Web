@@ -13,7 +13,6 @@ import {
   InfoContact,
   InputBox,
   LinkRS,
-  Parraf,
   RedesSociales,
   SectionContainer,
   StyledImg,
@@ -34,7 +33,6 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import ImgContacto from "../../assets/Contact/ImgContacto.jpg";
 import { red } from "@mui/material/colors";
@@ -55,27 +53,47 @@ export const Contact = () => {
     // Datos del formulario
     const formData = new FormData(formRef.current);
 
-    try {
-      // Realiza la solicitud HTTP POST
-      const response = await axios.post(
-        "https://formsubmit.co/b8396308100d58734864941f9d3de4ad",
-        formData
-      );
+    // Validación de campos
+    const name = formData.get("name");
+    const email = formData.get("email");
 
-      // Verifica la respuesta para confirmar el éxito
-      if (response.status === 200) {
-        // Cuando el envío es exitoso, muestra el mensaje de éxito
-        setSuccessAlert(true);
-        setErrorAlert(false); // Oculta la alerta de error si estaba visible
-        resetForm(); // Resetea el formulario
-      }
-    } catch (error) {
-      // Maneja cualquier error que pueda ocurrir durante la solicitud
+    if (!name || !email) {
       setErrorAlert(true);
-      setErrorMessage("Hubo un error al enviar el formulario.");
-      console.error("Error al enviar el formulario:", error);
+      setErrorMessage("Por favor, complete todos los campos requeridos.");
+    } else {
+      try {
+        // Realiza la solicitud HTTP POST
+        const response = await axios.post(
+          "https://formsubmit.co/b8396308100d58734864941f9d3de4ad",
+          formData
+        );
+
+        // Verifica la respuesta para confirmar el éxito
+        if (response.status === 200) {
+          // Cuando el envío es exitoso, muestra el mensaje de éxito
+          setSuccessAlert(true);
+          setErrorAlert(false); // Oculta la alerta de error si estaba visible
+          resetForm(); // Resetea el formulario
+        }
+      } catch (error) {
+        // Maneja cualquier error que pueda ocurrir durante la solicitud
+        setErrorAlert(true);
+        setErrorMessage("Hubo un error al enviar el formulario.");
+        console.error("Error al enviar el formulario:", error);
+      }
     }
   };
+
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "573192994843";
+    const message =
+      "Hola, estoy interesado en tus Creaciones 🧶🧵, Quisiera recibir mas información 📄 ";
+    const whatsappURL = `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(
+      message
+    )}`;
+    window.location.href = whatsappURL;
+  };
+
   return (
     <SectionContainer fixed>
       <BoxContactForm
@@ -114,6 +132,7 @@ export const Contact = () => {
                     type="text"
                     fullWidth
                     name="name"
+                    required
                   />
                 </InputBox>
                 <InputBox
@@ -183,14 +202,19 @@ export const Contact = () => {
               <MapTwoToneIcon
                 sx={{ color: red["A100"], fontSize: 30, mr: 1 }}
               />
-              <Parraf>Cl. 114 # 68A 45, Florencia, Medellín, Antioquia</Parraf>
+              <StyledLink
+                href={`https://www.google.com/maps?q=${encodeURIComponent(
+                  "Cl. 114 # 68A 45, Florencia, Medellín, Antioquia"
+                )}`}
+                target="_blank"
+                underline="hover"
+                rel="noopener noreferrer"
+                color=""
+              >
+                Cl. 114 # 68A 45, Florencia, Medellín, Antioquia
+              </StyledLink>
             </InfoContact>
-            <InfoContact>
-              <PhoneAndroidTwoToneIcon
-                sx={{ color: red["A100"], fontSize: 30, mr: 1 }}
-              />
-              <Parraf>(+57) 319 2994843</Parraf>
-            </InfoContact>
+
             <InfoContact>
               <EmailTwoToneIcon
                 sx={{ color: red["A100"], fontSize: 30, mr: 1 }}
@@ -200,8 +224,23 @@ export const Contact = () => {
                 underline="hover"
                 target="_blank"
                 color=""
+                rel="noopener noreferrer"
               >
                 Contacto@mafecreaciones.com
+              </StyledLink>
+            </InfoContact>
+            <InfoContact>
+              <PhoneAndroidTwoToneIcon
+                sx={{ color: red["A100"], fontSize: 30, mr: 1 }}
+              />
+              <StyledLink
+                onClick={handleWhatsAppClick}
+                target="_blank"
+                underline="hover"
+                rel="noopener noreferrer"
+                color=""
+              >
+                (+57) 319 2994843
               </StyledLink>
             </InfoContact>
           </TextBox>
@@ -211,6 +250,7 @@ export const Contact = () => {
               underline="hover"
               target="_blank"
               color=""
+              rel="noopener noreferrer"
             >
               <FacebookIcon />
             </LinkRS>
@@ -219,6 +259,7 @@ export const Contact = () => {
               underline="hover"
               target="_blank"
               color=""
+              rel="noopener noreferrer"
             >
               <InstagramIcon />
             </LinkRS>
@@ -227,14 +268,16 @@ export const Contact = () => {
               underline="hover"
               target="_blank"
               color=""
+              rel="noopener noreferrer"
             >
               <PinterestIcon />
             </LinkRS>
             <LinkRS
-              href="https://api.whatsapp.com/send/?phone=573192994843"
+              onClick={handleWhatsAppClick}
               underline="hover"
               target="_blank"
               color=""
+              rel="noopener noreferrer"
             >
               <WhatsAppIcon />
             </LinkRS>
@@ -243,6 +286,7 @@ export const Contact = () => {
               underline="hover"
               target="_blank"
               color=""
+              rel="noopener noreferrer"
             >
               <YouTubeIcon />
             </LinkRS>
