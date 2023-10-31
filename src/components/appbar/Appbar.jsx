@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { Link } from "react-scroll"; // Importa Link de react-scroll
+import React, { useEffect, useState } from "react";
+import { Link, scroller } from "react-scroll"; // Importa Link de react-scroll
 
 import {
   StyledAppBar,
   StyledButton,
+  StyledDrawer,
   StyledListBox,
   StyledMenuicon,
   StyledTypography,
@@ -27,25 +28,28 @@ const navItems = ["Inicio", "Creaciones", "Acerca de", "Contacto"];
 export const Appbar = (props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrollToSection, setScrollToSection] = useState(null);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
   const handleMenuItemClick = (sectionId) => {
-    
-    return (
-      <Link
-        to={sectionId}
-        spy={true}
-        smooth={true}
-        offset={-90} // Ajusta esto según el tamaño de tu barra de navegación
-        duration={800} // Duración del desplazamiento (en milisegundos)
-      >
-        {sectionId}
-      </Link>
-    );
+    handleDrawerToggle(); // Cierra el drawer cuando se hace clic en un elemento
+    setScrollToSection(sectionId); // Almacena la sección a la que se debe desplazar
   };
+
+  useEffect(() => {
+    if (scrollToSection) {
+      // Realiza el desplazamiento suave usando react-scroll
+      scroller.scrollTo(scrollToSection, {
+        duration: 800,
+        smooth: true,
+        offset: -90,
+      });
+      setScrollToSection(null); // Restablece el valor para futuros clics
+    }
+  }, [scrollToSection]);
 
   const drawer = (
     <Box
@@ -63,11 +67,19 @@ export const Appbar = (props) => {
         {navItems.map((item) => (
           <ListItem
             key={item}
-            onClick={() => handleMenuItemClick(item.toLowerCase())}
             disablePadding
           >
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <Link
+                to={item.toLowerCase()}
+                spy={true}
+                smooth={true}
+                offset={-90}
+                duration={800}
+                onClick={() => handleMenuItemClick(item.toLowerCase())}
+              >
+                <ListItemText primary={item} />
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -102,15 +114,18 @@ export const Appbar = (props) => {
           </StyledTypography>
           <StyledListBox>
             {navItems.map((item) => (
-              <StyledButton key={item}>
-                {handleMenuItemClick(item.toLowerCase())}
+              <StyledButton
+                key={item}
+                onClick={() => handleMenuItemClick(item.toLowerCase())}
+              >
+                {item}
               </StyledButton>
             ))}
           </StyledListBox>
         </Toolbar>
       </StyledAppBar>
       <nav>
-        <Drawer
+        <StyledDrawer
           container={container}
           variant="temporary"
           open={mobileOpen}
@@ -118,16 +133,10 @@ export const Appbar = (props) => {
           ModalProps={{
             keepMounted: true,
           }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
+          drawerWidth="300px"
         >
           {drawer}
-        </Drawer>
+        </StyledDrawer>
       </nav>
       <Box
         component="main"
