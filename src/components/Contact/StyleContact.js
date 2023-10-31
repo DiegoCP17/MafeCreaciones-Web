@@ -19,7 +19,7 @@ export const SectionContainer = styled(Container)`
   place-items: center;
   margin: 50px 50px 0px 0px;
   @media (max-width: ${breakpoint}) {
-    margin: 20px; // Reduzca el margen en pantallas más pequeñas
+    margin: 20px; 
   }
 `;
 
@@ -53,11 +53,11 @@ margin-bottom: 30px;
     align-items: center;
   }
   @media (max-width: 901px) {
-    flex-direction: column; // Cambiar a diseño de columna en pantallas más pequeñas
+    flex-direction: column; 
     align-items: center;
   }
   @media (max-width: ${breakpoint}) {
-    flex-direction: column; // Cambiar a diseño de columna en pantallas más pequeñas
+    flex-direction: column; 
   }
 `;
 
@@ -72,7 +72,7 @@ export const BoxForm = styled(Box)`
   text-align: justify;
 
   @media (max-width: ${breakpoint}) {
-    width: 80%; // Reduzca el ancho en pantallas más pequeñas
+    width: 80%; 
   }
 `;
 
@@ -84,7 +84,7 @@ export const TypographyTitle = styled(Typography)`
   color: rgba(238, 131, 107, 1);
 
   @media (max-width: ${breakpoint}) {
-    font-size: 1.5em; // Reduzca el tamaño de fuente en pantallas más pequeñas
+    font-size: 1.5em; 
   }
 `;
 
@@ -95,7 +95,7 @@ export const Typographyparraf = styled(Typography)`
   }
 
   @media (max-width: ${breakpoint}) {
-    font-size: 0.9em; // Reduzca el tamaño de fuente en pantallas más pequeñas
+    font-size: 0.9em; 
   }
 `;
 
@@ -108,7 +108,7 @@ export const InputBox = styled(Grid)`
   }
 
   @media (max-width: ${breakpoint}) {
-    margin-bottom: 10px; // Reduzca el espacio entre elementos en pantallas más pequeñas
+    margin-bottom: 10px; 
   }
 `;
 
@@ -120,7 +120,7 @@ export const StyledTextField = styled(TextField)`
   }
 
   @media (max-width: ${breakpoint}) {
-    font-size: 14px; // Reduzca el tamaño de fuente en pantallas más pequeñas
+    font-size: 14px; 
   }
 `;
 
@@ -131,7 +131,7 @@ export const FieldsTypography = styled(Typography)`
   }
 
   @media (max-width: ${breakpoint}) {
-    font-size: 16px; // Reduzca el tamaño de fuente en pantallas más pequeñas
+    font-size: 16px; 
   }
 `;
 
@@ -151,7 +151,7 @@ export const TextArea = styled(TextareaAutosize)`
   }
 
   @media (max-width: ${breakpoint}) {
-    font-size: 16px; // Reduzca el tamaño de fuente en pantallas más pequeñas
+    font-size: 16px; 
   }
 `;
 
@@ -196,7 +196,7 @@ export const ImgBox = styled(Box)`
 
   @media (max-width: ${breakpoint}) {
     width: 100%;
-    height: auto; // Permitir que la altura se ajuste automáticamente
+    height: auto; 
   }
 `;
 
@@ -211,7 +211,7 @@ export const StyledImg = styled.img`
   box-shadow: 1px 9px 20px -5px;
 
   @media (max-width: ${breakpoint}) {
-    border-radius: 0; // Eliminar el redondeo de la imagen en pantallas más pequeñas
+    border-radius: 0; 
   }
 `;
 
@@ -259,9 +259,9 @@ export const LinkRS = styled(Link)`
 
 export const ContainerStyled = styled(Container)`
   color: #98383a;
-  padding: 10px; /* Elimina el relleno */
+  padding: 10px; 
   text-align: center;
-  width: 100%; /* Ocupa el 100% del ancho */
+  width: 100%; 
 `;
 
 export const TextStyled = styled(Typography)`
