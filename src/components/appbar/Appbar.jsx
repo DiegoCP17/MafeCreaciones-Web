@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, scroller } from "react-scroll"; // Importa Link de react-scroll
+import { Link, scroller } from "react-scroll"; 
 
 import {
   StyledAppBar,
@@ -13,7 +13,6 @@ import {
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -22,7 +21,6 @@ import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
-const drawerWidth = 240;
 const navItems = ["Inicio", "Creaciones", "Acerca de", "Contacto"];
 
 export const Appbar = (props) => {
@@ -41,13 +39,12 @@ export const Appbar = (props) => {
 
   useEffect(() => {
     if (scrollToSection) {
-      // Realiza el desplazamiento suave usando react-scroll
       scroller.scrollTo(scrollToSection, {
         duration: 800,
         smooth: true,
         offset: -90,
       });
-      setScrollToSection(null); // Restablece el valor para futuros clics
+      setScrollToSection(null);
     }
   }, [scrollToSection]);
 
