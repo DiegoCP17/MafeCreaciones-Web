@@ -16,6 +16,7 @@ export const StyledCard = styled(Card)`
   width: calc(33.33% - 20px);
   height: 100%;
   max-height: 550px;
+
   && {
     box-shadow: 20px 20px 20px -9px rgba(238, 131, 107, 0.8);
   }
