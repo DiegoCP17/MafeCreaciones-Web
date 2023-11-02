@@ -84,9 +84,15 @@ export const StyledDrawer = styled(Drawer)`
   }
 
   .MuiDrawer-paper {
+    max-width: 300px;
+    width: 100%;  
     box-sizing: border-box;
     width: ${(props) => props.drawerWidth};
-    background: linear-gradient(80deg, #7ddbee, #ee836b);
-    color: #5498a4;
+    background: linear-gradient(
+      40deg,
+      rgba(125, 221, 238, 0.9),
+      rgba(238, 131, 107, 01)
+    );
+    color: #154c79;
   }
 `;
