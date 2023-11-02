@@ -5,20 +5,24 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 export const BannerContainer = styled(Container)`
   width: 1400px;
-  height: 500px;
+  height: 429px;
   overflow: hidden;
   position: relative;
   border-radius: 10px;
   margin-bottom: 50px;
+  background: linear-gradient(
+    40deg,
+    rgba(125, 221, 238, 0.4),
+    rgba(238, 131, 107, 0.4)
+  );
 `;
 
 export const BannerImage = styled.img`
   width: 100%;
   height: 100%;
-  display: block; /* Establece el elemento como bloque para que ocupe el espacio disponible */
+  display: block;
   border-radius: 10px;
-  object-fit: fill;
-  position: relative;
+  object-fit: contain; /* Establece object-fit en "cover" */
   max-width: 1400px;
   max-height: 500px;
 `;
