@@ -1,0 +1,10 @@
+* {
+  margin: 0; /* Establece el margen a 0 para todos los elementos */
+  padding: 0; /* Establece el relleno (padding) a 0 para todos los elementos */
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw; 
+}
