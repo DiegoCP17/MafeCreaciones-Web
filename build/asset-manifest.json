@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f0e5ee5c.css",
+    "main.js": "/static/js/main.fde0f7cb.js",
+    "static/js/787.6ae2d83d.chunk.js": "/static/js/787.6ae2d83d.chunk.js",
+    "static/media/ImgContacto.jpg": "/static/media/ImgContacto.3925c323d4e39b5eef3b.jpg",
+    "static/media/AboutImg.png": "/static/media/AboutImg.11e3f6bc933d5c4cba1d.png",
+    "static/media/MafeBanner2.png": "/static/media/MafeBanner2.339230976d582be1572d.png",
+    "static/media/MafeBanner.png": "/static/media/MafeBanner.617b29f32743707f18bc.png",
+    "static/media/imagen1.png": "/static/media/imagen1.fca2520c9e65c29e6f0b.png",
+    "static/media/imagen4.png": "/static/media/imagen4.2aa6ad44f92c74d86fd5.png",
+    "static/media/imagen3.png": "/static/media/imagen3.f130b77fdad8da5b899b.png",
+    "static/media/imagen2.png": "/static/media/imagen2.04e215dab6c62d68ffa7.png",
+    "static/media/MafeBanner3.png": "/static/media/MafeBanner3.c785e52b70d2e3a4e876.png",
+    "static/media/imagen5.png": "/static/media/imagen5.c5cb69e6dc816f8290ba.png",
+    "static/media/imagen6.png": "/static/media/imagen6.31eacaf24419875a1f0e.png",
+    "index.html": "/index.html",
+    "main.f0e5ee5c.css.map": "/static/css/main.f0e5ee5c.css.map",
+    "main.fde0f7cb.js.map": "/static/js/main.fde0f7cb.js.map",
+    "787.6ae2d83d.chunk.js.map": "/static/js/787.6ae2d83d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0e5ee5c.css",
+    "static/js/main.fde0f7cb.js"
+  ]
+}
